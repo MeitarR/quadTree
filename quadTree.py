@@ -21,7 +21,10 @@ def distance(obj1, obj2) -> float:
 
 
 class QuadTree:
-    def __init__(self, bounds: Union[Bounds, Tuple[float, float, float, float]], members: list, max_for_node: int = 4):
+    def __init__(self, bounds: Union[Bounds, Tuple[float, float, float, float]], members: list=None, max_for_node: int=4):
+        if members is None:
+            members = []
+
         self.bounds: Bounds = Bounds(*bounds)
 
         self.max_for_node: int = max_for_node
